@@ -32,189 +32,265 @@ from fractions import Fraction
 from math import sqrt
 from itertools import combinations
 from datetime import datetime
+import matplotlib as mpl
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+import matplotlib.pyplot as plt
 
-def confirm_Alex(A, p, q, r):
-    """
-    Confirms whether a number is Alexandrian using the formal definition
-    Slow performance
-    """
-    prod = p * q * r
-    frac = Fraction(1, p) + Fraction(1, q) + Fraction(1, r)
-    A_in = Fraction(1, A)
-    #print prod, frac, A_in
-    if prod == A and frac == A_in:
-        return True
-    else:
-        return False
-
-def confirm_Alex_fast(p, q, r):
-    """
-    Faster way to confirm if Alexandrian
-    """
-    if p*q*r < 0:
-        return False
-    if q*r + p*r + p*q -1 == 0:
-        return True
-    else:
-        return False
-
-def calc_p(q, r):
-    """
-    Returns the value of p, given q and r
-    """
-    return Fraction(1-q*r, r+q)
-
-def prod(p, q, r):
-    return p * q * r
-
-def catch_zero(in_val, out_val):
-    if in_val == 0:
-        return out_val+1
-    else:
-        return out_val
-
-##def is_Alex(A, verbose = False):
+##def confirm_Alex(A, p, q, r):
 ##    """
-##    Checks whether a given number is Alexandrian
+##    Confirms whether a number is Alexandrian using the formal definition
+##    Slow performance
 ##    """
-##    q = -A
-##    # Using a for loop will result in overflow
-##    # Loop through q- space
-##    while True:
-##        # If you've tried all values of q on the set -A:A and no solultion
-##        # found, then none exists
-##        print 'q: ' + str(q)
-##        if q > A:
-##            return False
+##    prod = p * q * r
+##    frac = Fraction(1, p) + Fraction(1, q) + Fraction(1, r)
+##    A_in = Fraction(1, A)
+##    #print prod, frac, A_in
+##    if prod == A and frac == A_in:
+##        return True
+##    else:
+##        return False
 ##
-##        # Skip q = zero
-##        q= catch_zero(q, q)
+##def confirm_Alex_fast(p, q, r):
+##    """
+##    Faster way to confirm if Alexandrian
+##    """
+##    if p*q*r < 0:
+##        return False
+##    if q*r + p*r + p*q -1 == 0:
+##        return True
+##    else:
+##        return False
 ##
-##        max_r = A/float(q)
-##        print 'max_r: ' + str(max_r)
+##def calc_p(q, r):
+##    """
+##    Returns the value of p, given q and r
+##    """
+##    return Fraction(1-q*r, r+q)
+##
+##def prod(p, q, r):
+##    return p * q * r
+##
+##def catch_zero(in_val, out_val):
+##    if in_val == 0:
+##        return out_val+1
+##    else:
+##        return out_val
+##
+####def is_Alex(A, verbose = False):
+####    """
+####    Checks whether a given number is Alexandrian
+####    """
+####    q = -A
+####    # Using a for loop will result in overflow
+####    # Loop through q- space
+####    while True:
+####        # If you've tried all values of q on the set -A:A and no solultion
+####        # found, then none exists
+####        print 'q: ' + str(q)
+####        if q > A:
+####            return False
+####
+####        # Skip q = zero
+####        q= catch_zero(q, q)
+####
+####        max_r = A/float(q)
+####        print 'max_r: ' + str(max_r)
+####
+####
+####        r = int(abs(max_r) * -1)
+####        # Loop through r - space
+####        while True:
+####
+####            # Check to see if loop should continue
+####            if r > max_r:
+####                break
+####            r = catch_zero(r+q, r)
+####            p = calc_p(q, r)
+####            print 'q =' + str(q) + ' r = ' + str(r) + ' p=' + str(p)
+####
+####            # Check if p is an integer
+####            if p % p.denominator != 0:
+####                r +=1
+####
+####
+####            if confirm_Alex_fast(p, q, r) == True:
+####                    if verbose == True:
+####                        out = (A, p, q, r)
+####                    else:
+####                        out = True
+####            r +=1
+####        q += 1
 ##
 ##
-##        r = int(abs(max_r) * -1)
-##        # Loop through r - space
-##        while True:
-##
-##            # Check to see if loop should continue
-##            if r > max_r:
-##                break
-##            r = catch_zero(r+q, r)
-##            p = calc_p(q, r)
-##            print 'q =' + str(q) + ' r = ' + str(r) + ' p=' + str(p)
-##
-##            # Check if p is an integer
-##            if p % p.denominator != 0:
-##                r +=1
+##def factors(n):
+##    # Adapted from http://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
+##    # May need to refactor to save the factors to a dictionary to avoid
+##    # mem overflow
+##    return reduce(list.__add__,
+##                ([i, n//i] for i in
+##                range(1, int(n**0.5) + 1) if n % i == 0))
 ##
 ##
-##            if confirm_Alex_fast(p, q, r) == True:
-##                    if verbose == True:
-##                        out = (A, p, q, r)
-##                    else:
-##                        out = True
-##            r +=1
-##        q += 1
+##def Alex_simple(A, verbose = False):
+##    """
+##    Steps:
+##        1. Calculate all the factors of the number
+##        2. Calc all combinations of all positive or two negative factors
+##        3. Test those values
+##    """
+##    f = factors(A)
+##    g = [-1 * i for i in f]
+##    g.extend(f)
+##    g.sort()
+##    y = list((combinations(g,3)))
+##    for i in range(len(y)):
+##        p = y[i][0]
+##        q = y[i][1]
+##        r = y[i][2]
+##        if confirm_Alex_fast(p, q, r) == True and p * q * r == A:
+##            if verbose == True: return p, q, r
+##            else: return True
+##    return False
+##
+##def Alex_new(A, prev_max, verbose = False, test = False):
+##    """
+##    Steps:
+##        1. Calculate all the factors of the number
+##        2. Calc all combinations of all positive or two negative factors
+##        3. Test those values
+##    """
+##    f = factors(A)
+##    g = [-1 * i for i in f if i>= prev_max]
+##    if test == True:
+##        print g
+##    g.extend(f)
+##    g.sort()
+##    y = list((combinations(g,3)))
+##    for i in range(len(y)):
+##        p = y[i][0]
+##        q = y[i][1]
+##        r = y[i][2]
+##        if confirm_Alex_fast(p, q, r) == True and p * q * r == A:
+##            if verbose == True: return True, p, q, r
+##            else: return True, max(p, q, r)
+##    return False, None
+##
+##
+##def ith_Alex(N, verbose = False):
+##    start = datetime.now()
+##    i = 0
+##    j = 2 # Only even numbers can be Alexandarian
+##    while i <= N:
+##
+##        if verbose == True:
+##            print 'testing ' + str(j)
+##        if Alex_simple(j)== True:
+##            i += 1
+##            if verbose == True:
+##                print str(i) +'th Number is ' + str(j)
+##        if i == N:
+##            end = datetime.now()
+##            t = end - start
+##            print 'Execution time: ' + str(t)
+##            return j
+##        else:
+##            j += 2
+##
+##def ith_Alex_new(N, verbose = False):
+##
+##    start = datetime.now()
+##    i = 0
+##    j = 2 # Only even numbers can be Alexandarian
+##    mx = 0
+##    values = []
+##    while i <= N:
+##
+##        if verbose == True:
+##            print 'testing ' + str(j)
+##        #t, mx = Alex_new(j, mx)
+##        z = Alex_new(j, mx, verbose= True)
+##        t = z[0]
+##
+##        if t == True:
+##            p = z[1]
+##            q = z[2]
+##            r = z[3]
+##            mx = max(p, q, r)
+##            values.append([j, p, q, r])
+##            i += 1
+##            if verbose == True:
+##                print str(i) +'th Number is ' + str(j)
+##        if i == N:
+##            end = datetime.now()
+##            t = end - start
+##            print 'Execution time: ' + str(t)
+##            return values
+##        else:
+##            j += 2
 
 
-def factors(n):
-    # Adapted from http://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
-    # May need to refactor to save the factors to a dictionary to avoid
-    # mem overflow
-    return reduce(list.__add__,
-                ([i, n//i] for i in
-                range(1, int(n**0.5) + 1) if n % i == 0))
-
-
-def Alex_simple(A, verbose = False):
+def Alex_three(start_p, max_iter = 100000, verbose = False):
     """
     Steps:
-        1. Calculate all the factors of the number
-        2. Calc all combinations of all positive or two negative factors
-        3. Test those values
+        1. Take a starting value of p
+        2. Increment through q's, then calc range of possible r's
+        3. Increment through the possible r's for the given p and q
+        4. Use root finding to find if possible value of r for that given
+        p and q that could result in a result
     """
-    f = factors(A)
-    g = [-1 * i for i in f]
-    g.extend(f)
-    g.sort()
-    y = list((combinations(g,3)))
-    for i in range(len(y)):
-        p = y[i][0]
-        q = y[i][1]
-        r = y[i][2]
-        if confirm_Alex_fast(p, q, r) == True and p * q * r == A:
-            if verbose == True: return p, q, r
-            else: return True
-    return False
-
-def Alex_new(A, prev_max, verbose = False, test = False):
-    """
-    Steps:
-        1. Calculate all the factors of the number
-        2. Calc all combinations of all positive or two negative factors
-        3. Test those values
-    """
-    f = factors(A)
-    g = [-1 * i for i in f if i>= prev_max]
-    if test == True:
-        print g
-    g.extend(f)
-    g.sort()
-    y = list((combinations(g,3)))
-    for i in range(len(y)):
-        p = y[i][0]
-        q = y[i][1]
-        r = y[i][2]
-        if confirm_Alex_fast(p, q, r) == True and p * q * r == A:
-            if verbose == True: return p, q, r
-            else: return True, max(p, q, r)
-    return False, None
-
-
-def ith_Alex(N, verbose = False):
+    alex = []
     start = datetime.now()
-    i = 0
-    j = 2 # Only even numbers can be Alexandarian
-    while i <= N:
+    p = start_p
 
-        if verbose == True:
-            print 'testing ' + str(j)
-        if Alex_simple(j)== True:
-            i += 1
-            if verbose == True:
-                print str(i) +'th Number is ' + str(j)
-        if i == N:
-            end = datetime.now()
-            t = end - start
-            print 'Execution time: ' + str(t)
-            return j
-        else:
-            j += 2
 
-def ith_Alex_new(N, verbose = False):
-    start = datetime.now()
-    i = 0
-    j = 2 # Only even numbers can be Alexandarian
-    mx = 0
-    while i <= N:
+    while True:
+        q = -1
+        if p > max_iter:
+            return alex
+        while True:
 
-        if verbose == True:
-            print 'testing ' + str(j)
-        t, mx = Alex_new(j, mx)
-        if t == True:
-            i += 1
-            if verbose == True:
-                print str(i) +'th Number is ' + str(j)
-        if i == N:
-            end = datetime.now()
-            t = end - start
-            print 'Execution time: ' + str(t)
-            return j
-        else:
-            j += 2
+            if abs(q) > max_iter:
+                break
+            elif q + p == 0:
+                pass
+            else:
 
+                r = Fraction(1- p * q, q + p)
+                if int(r) == r: # If r is a non-integer, then ignore it
+                    prod = p * q * r
+                    if int(prod) == prod and prod > 0:
+                        alex.append([prod, p, q, r])
+                        if verbose == True:
+                            print ' Alex number found: ' + str(prod)
+            q += -1
+        p += 1
+
+
+
+
+
+
+
+##    for p in range(start_p, max_iter):
+##        for i in range(1,  max_iter): # Cant have a negative range
+##            q = - i
+####            for j in range(1, max_iter):
+####                #r = -j
+##            try: # Catch Zero Error
+##                r = Fraction(1- p * q, q + p)
+##                t = q * r + p * r + p*q -1
+##                if t == 0:
+##                    prod = p * q * r
+##                    if int(prod) == prod and prod > 0:
+##                        alex.append([prod, p, q, r])
+##                        if verbose == True:
+##                            print ' Alex number found: ' + str(prod)
+##            except ZeroDivisionError:
+##                pass
+##
+##
+##    return alex
 
 
 
@@ -252,10 +328,47 @@ if __name__ == '__main__':
 ##    print ith_Alex(5, verbose = True)
 ##    a = [6, 42, 120, 156, 420, 630]
 ##    print [Alex_simple(i, verbose = True) for i in a]
-    print ith_Alex(15, verbose = False)
-    print ith_Alex_new(15, verbose = False)
+##    print ith_Alex(15, verbose = False)
+    #values = ith_Alex_new(20, verbose = True)
 ##    Alex_new(420, 2, False, True)
 ##    Alex_simple(420, True)
+##    A_vals = [values[i][0] for i in range(len(values))]
+##    x = [values[i][1] for i in range(len(values))]
+##    y = [values[i][2] for i in range(len(values))]
+##    z = [values[i][3] for i in range(len(values))]
+##
+##    # Plot the p, q, r values
+##    fig = plt.figure()
+##    ax = fig.gca(projection='3d')
+##    #ax.scatter(x, y, zs = z)
+##    ax.plot(x, y, z)
+##    ax.set_xlabel('p')
+##    ax.set_ylabel('q')
+##    ax.set_zlabel('r')
+##    ax.legend()
+##
+##    plt.show()
+##
+##    # Plot the A valies
+##    fig = plt.figure()
+##    H = [100 for i in range(len(A_vals))]
+##    plt.bar(A_vals, H, color ='r', width = 20)
+##    plt.xticks(A_vals, rotation=90)
+##    plt.show()
+
+    # New method
+    values = Alex_three(1, max_iter = 500000, verbose = True)
+    A_vals = list(set([values[i][0] for i in range(len(values))]))
+    A_vals.sort()
+    print len(A_vals)
+
+    # Plot the A valies
+    fig = plt.figure()
+    H = [100 for i in range(len(A_vals))]
+    plt.bar(A_vals, H, color ='r', width = 20)
+    plt.xticks(A_vals, rotation=90)
+    plt.show()
+
 
 
 
