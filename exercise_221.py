@@ -230,7 +230,8 @@ import matplotlib.pyplot as plt
 ##            j += 2
 
 
-def Alex_three(start_p, max_iter = 100000, verbose = False):
+def Alex_three(start_p, max_iter = 100000, max_alex = 3000000
+,verbose = False):
     """
     Steps:
         1. Take a starting value of p
@@ -261,6 +262,8 @@ def Alex_three(start_p, max_iter = 100000, verbose = False):
                     prod = p * q * r
                     if int(prod) == prod and prod > 0:
                         alex.append([prod, p, q, r])
+                        if len(alex) >= max_alex:
+                            return alex
                         if verbose == True:
                             print ' Alex number found: ' + str(prod)
             q += -1
@@ -357,7 +360,8 @@ if __name__ == '__main__':
 ##    plt.show()
 
     # New method
-    values = Alex_three(1, max_iter = 500000, verbose = True)
+    values = Alex_three(1, max_iter = 5000000, max_alex =500000,
+    verbose = True)
     A_vals = list(set([values[i][0] for i in range(len(values))]))
     A_vals.sort()
     print len(A_vals)
