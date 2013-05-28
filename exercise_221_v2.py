@@ -32,10 +32,8 @@ from fractions import Fraction
 from math import sqrt
 from itertools import combinations
 from datetime import datetime
-import matplotlib as mpl
-from mpl_toolkits.mplot3d import Axes3D
-import numpy as np
-import matplotlib.pyplot as plt
+import csv
+
 
 
 
@@ -59,8 +57,8 @@ def factors(n):
     # mem overflow
     return reduce(list.__add__,
                 ([i, n//i] for i in
-                #range(1, int(n**0.5) + 1) if n % i == 0))
-                range(1, sqrt(n) + 1) if n % i == 0))
+                range(1, int(n**0.5) + 1) if n % i == 0))
+                #range(1, sqrt(n) + 1) if n % i == 0))
 
 def Alex_new(A, prev_max, verbose = False, test = False):
     """
@@ -143,6 +141,10 @@ def ith_Alex_new(N, verbose = False):
 
 
 if __name__ == '__main__':
+    values = ith_Alex_new(10, verbose = False)
+    with open('C:/Local Files/alex_integers.csv', 'wb') as csvfile:
+        spamwriter = csv.writer(csvfile, delimiter=',', dialect = 'excel')
+        spamwriter.writerows(values)
 
 
 
