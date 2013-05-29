@@ -118,6 +118,36 @@ def ith_Alex_new(N, verbose = False):
             j += 2
 
 
+def unit():
+    """
+    Tests whether the first 39 euler numbers agree
+    with
+    http://oeis.org/A147811/b147811.txt
+    """
+    f = open('C:/Local Files/euler_check.csv', 'rb')
+    reader = csv.reader(f)
+    control_values = []
+    for row in reader:
+        #print row
+        v = row[0].split(' ')
+        #print v
+        i = v[0]
+        #print i
+        c_val = v[1]
+        control_values.append([i, c_val])
+        print c_val
+    print i
+    values = ith_Alex_new(i, verbose = True)
+    for i in range(len(values)):
+        test_val = values[i][0]
+        control_val = control_values[i][1]
+        #print test_val
+        print control_val, test_val
+        if float(control_val) != test_val:
+            print 'Error on ' + str(i) + 'th value'
+    return values
+
+
 
 
 
@@ -141,7 +171,7 @@ def ith_Alex_new(N, verbose = False):
 
 
 if __name__ == '__main__':
-    values = ith_Alex_new(10, verbose = False)
+    values = unit()
     with open('C:/Local Files/alex_integers.csv', 'wb') as csvfile:
         spamwriter = csv.writer(csvfile, delimiter=',', dialect = 'excel')
         spamwriter.writerows(values)

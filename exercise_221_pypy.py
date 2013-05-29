@@ -71,6 +71,7 @@ def Alex_three(start_p, max_iter = 100000, max_alex = 3000000
 
             if abs(q) > max_iter:
                 break
+            # NOTE: THIS MAY BE THROWING OUT VALID ALEX INTEGERS!
             elif q + p == 0:
                 pass
             else:
