@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      4737,        149]
-NotebookOptionsPosition[      3885,        119]
-NotebookOutlinePosition[      4231,        134]
-CellTagsIndexPosition[      4188,        131]
+NotebookDataLength[      4610,        144]
+NotebookOptionsPosition[      3851,        116]
+NotebookOutlinePosition[      4197,        131]
+CellTagsIndexPosition[      4154,        128]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -57,8 +57,6 @@ Cell[BoxData[
  CellChangeTimes->{{3.622573798151578*^9, 3.622573843649127*^9}, 
    3.622573874976259*^9, 3.6225741518909483`*^9}],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.6225739445372148`*^9, 3.6225739722679873`*^9}}],
 
@@ -88,8 +86,7 @@ Cell[BoxData[
     RowBox[{"{", 
      RowBox[{"25", ",", "125", ",", "625", ",", "3125"}], "}"}]}], "}"}], 
   "]"}]], "Output",
- CellChangeTimes->{3.6225739642081814`*^9}]
-}, Open  ]],
+ CellChangeTimes->{3.6225739642081814`*^9}],
 
 Cell[CellGroupData[{
 
@@ -136,24 +133,21 @@ Notebook[{
 Cell[558, 20, 194, 4, 31, "Input"],
 Cell[755, 26, 356, 7, 31, "Input"],
 Cell[1114, 35, 120, 2, 31, "Input"],
-Cell[1237, 39, 282, 7, 31, InheritFromParent],
-Cell[1522, 48, 94, 1, 31, InheritFromParent],
+Cell[1237, 39, 282, 7, 31, "Input"],
+Cell[1522, 48, 94, 1, 31, "Input"],
 Cell[1619, 51, 271, 6, 31, "Input"],
+Cell[1893, 59, 96, 1, 31, "Input"],
+Cell[1992, 62, 535, 11, 24, "Message"],
+Cell[2530, 75, 479, 13, 31, "Output"],
 Cell[CellGroupData[{
-Cell[1915, 61, 96, 1, 31, InheritFromParent],
-Cell[2014, 64, 535, 11, 24, "Message"],
-Cell[2552, 77, 479, 13, 31, "Output"]
+Cell[3034, 92, 404, 9, 52, "Input"],
+Cell[3441, 103, 101, 1, 31, "Output"]
 }, Open  ]],
-Cell[CellGroupData[{
-Cell[3068, 95, 404, 9, 52, "Input"],
-Cell[3475, 106, 101, 1, 64, "Output"]
-}, Open  ]],
-Cell[3591, 110, 96, 1, 31, InheritFromParent],
-Cell[3690, 113, 94, 1, 31, InheritFromParent],
-Cell[3787, 116, 94, 1, 31, InheritFromParent]
+Cell[3557, 107, 96, 1, 31, "Input"],
+Cell[3656, 110, 94, 1, 31, "Input"],
+Cell[3753, 113, 94, 1, 31, "Input"]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
