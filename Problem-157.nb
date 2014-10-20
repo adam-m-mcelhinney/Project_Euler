@@ -1,0 +1,1235 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     46201,       1226]
+NotebookOptionsPosition[     45700,       1206]
+NotebookOutlinePosition[     46045,       1221]
+CellTagsIndexPosition[     46002,       1218]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler", " ", "Problem", " ", "157"}], " ", "*)"}],
+   "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"This", " ", "does", " ", "not", " ", 
+     RowBox[{"work", ".", " ", "Returns"}], " ", "181", " ", "solutions"}], 
+    ",", " ", 
+    RowBox[{
+     RowBox[{"but", " ", "only", " ", "solutions", " ", "for", " ", "p"}], 
+     " ", "=", 
+     RowBox[{
+      RowBox[{"1", " ", "and", " ", "n"}], " ", "=", " ", 
+      RowBox[{
+       RowBox[{"9.", "\[IndentingNewLine]", "t"}], " ", "=", " ", 
+       RowBox[{"FindInstance", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "/", "a"}], ")"}], " ", "+", " ", 
+            RowBox[{"(", 
+             RowBox[{"1", "/", "b"}], ")"}]}], " ", "==", " ", 
+           RowBox[{"(", 
+            RowBox[{"p", "/", 
+             RowBox[{"(", 
+              RowBox[{"10", "^", "n"}], ")"}]}], ")"}]}], "  ", 
+          "\[IndentingNewLine]", "\t", "&&", " ", 
+          RowBox[{"a", "\[LessEqual]", "b"}], " ", "\[IndentingNewLine]", 
+          "\t", "&&", " ", 
+          RowBox[{"a", ">", "0"}], " ", "\[IndentingNewLine]", "\t", "&&", 
+          " ", 
+          RowBox[{"b", ">", "0"}], " ", "\[IndentingNewLine]", "\t", "&&", 
+          " ", 
+          RowBox[{"p", ">", "0"}], "\[IndentingNewLine]", "\t ", "&&", " ", 
+          RowBox[{"n", " ", ">", "0"}], "\[IndentingNewLine]", "\t  ", "&&", 
+          " ", 
+          RowBox[{
+          "1", "\[LessEqual]", " ", "n", " ", "\[LessEqual]", " ", "9"}]}], 
+         "\[IndentingNewLine]", "\t\t", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"a", ",", "b", ",", "p"}], "}"}], "\[IndentingNewLine]", 
+         "\t\t", ",", " ", "Integers", "\[IndentingNewLine]", "\t\t", ",", 
+         " ", "1000"}], "]"}]}]}]}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.622806717665615*^9, 3.622806809311779*^9}, {
+  3.6228068610457916`*^9, 3.6228068923607917`*^9}, {3.6228069544157915`*^9, 
+  3.6228070218237915`*^9}, {3.622807059351792*^9, 3.6228070801637917`*^9}, {
+  3.622807120917792*^9, 3.622807221089957*^9}, {3.6228073096208096`*^9, 
+  3.622807337617609*^9}, {3.6228074029281397`*^9, 3.622807410263873*^9}, {
+  3.6228084653483706`*^9, 3.6228084871445503`*^9}, {3.6228086298478193`*^9, 
+  3.6228086331841526`*^9}, {3.622808691175951*^9, 3.622808723216155*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FindInstance", "::", "fwsol"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Warning: FindInstance found only \[NoBreak]\\!\\(181\\)\
+\[NoBreak] instance(s), but it was not able to prove \[NoBreak]\\!\\(1000\\)\
+\[NoBreak] instances do not exist. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/FindInstance\\\", ButtonNote -> \
+\\\"FindInstance::fwsol\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.622808279661804*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000001"}], ",", 
+     RowBox[{"b", "\[Rule]", "1000000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000002"}], ",", 
+     RowBox[{"b", "\[Rule]", "500000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000004"}], ",", 
+     RowBox[{"b", "\[Rule]", "250000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000005"}], ",", 
+     RowBox[{"b", "\[Rule]", "200000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000008"}], ",", 
+     RowBox[{"b", "\[Rule]", "125000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000010"}], ",", 
+     RowBox[{"b", "\[Rule]", "100000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000016"}], ",", 
+     RowBox[{"b", "\[Rule]", "62500001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000020"}], ",", 
+     RowBox[{"b", "\[Rule]", "50000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000025"}], ",", 
+     RowBox[{"b", "\[Rule]", "40000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000032"}], ",", 
+     RowBox[{"b", "\[Rule]", "31250001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000040"}], ",", 
+     RowBox[{"b", "\[Rule]", "25000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000050"}], ",", 
+     RowBox[{"b", "\[Rule]", "20000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000064"}], ",", 
+     RowBox[{"b", "\[Rule]", "15625001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000080"}], ",", 
+     RowBox[{"b", "\[Rule]", "12500001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000100"}], ",", 
+     RowBox[{"b", "\[Rule]", "10000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000125"}], ",", 
+     RowBox[{"b", "\[Rule]", "8000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000128"}], ",", 
+     RowBox[{"b", "\[Rule]", "7812501000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000160"}], ",", 
+     RowBox[{"b", "\[Rule]", "6250001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000200"}], ",", 
+     RowBox[{"b", "\[Rule]", "5000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000250"}], ",", 
+     RowBox[{"b", "\[Rule]", "4000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000256"}], ",", 
+     RowBox[{"b", "\[Rule]", "3906251000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000320"}], ",", 
+     RowBox[{"b", "\[Rule]", "3125001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000400"}], ",", 
+     RowBox[{"b", "\[Rule]", "2500001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000500"}], ",", 
+     RowBox[{"b", "\[Rule]", "2000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000512"}], ",", 
+     RowBox[{"b", "\[Rule]", "1953126000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000625"}], ",", 
+     RowBox[{"b", "\[Rule]", "1600001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000640"}], ",", 
+     RowBox[{"b", "\[Rule]", "1562501000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000000800"}], ",", 
+     RowBox[{"b", "\[Rule]", "1250001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000001000"}], ",", 
+     RowBox[{"b", "\[Rule]", "1000001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000001024"}], ",", 
+     RowBox[{"b", "\[Rule]", "976563500000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000001250"}], ",", 
+     RowBox[{"b", "\[Rule]", "800001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000001280"}], ",", 
+     RowBox[{"b", "\[Rule]", "781251000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000001600"}], ",", 
+     RowBox[{"b", "\[Rule]", "625001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000002000"}], ",", 
+     RowBox[{"b", "\[Rule]", "500001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000002048"}], ",", 
+     RowBox[{"b", "\[Rule]", "488282250000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000002500"}], ",", 
+     RowBox[{"b", "\[Rule]", "400001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000002560"}], ",", 
+     RowBox[{"b", "\[Rule]", "390626000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000003125"}], ",", 
+     RowBox[{"b", "\[Rule]", "320001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000003200"}], ",", 
+     RowBox[{"b", "\[Rule]", "312501000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000004000"}], ",", 
+     RowBox[{"b", "\[Rule]", "250001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000004096"}], ",", 
+     RowBox[{"b", "\[Rule]", "244141625000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000005000"}], ",", 
+     RowBox[{"b", "\[Rule]", "200001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000005120"}], ",", 
+     RowBox[{"b", "\[Rule]", "195313500000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000006250"}], ",", 
+     RowBox[{"b", "\[Rule]", "160001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000006400"}], ",", 
+     RowBox[{"b", "\[Rule]", "156251000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000008000"}], ",", 
+     RowBox[{"b", "\[Rule]", "125001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000008192"}], ",", 
+     RowBox[{"b", "\[Rule]", "122071312500000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000010000"}], ",", 
+     RowBox[{"b", "\[Rule]", "100001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000010240"}], ",", 
+     RowBox[{"b", "\[Rule]", "97657250000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000012500"}], ",", 
+     RowBox[{"b", "\[Rule]", "80001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000012800"}], ",", 
+     RowBox[{"b", "\[Rule]", "78126000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000015625"}], ",", 
+     RowBox[{"b", "\[Rule]", "64001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000016000"}], ",", 
+     RowBox[{"b", "\[Rule]", "62501000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000016384"}], ",", 
+     RowBox[{"b", "\[Rule]", "61036156250000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000020000"}], ",", 
+     RowBox[{"b", "\[Rule]", "50001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000020480"}], ",", 
+     RowBox[{"b", "\[Rule]", "48829125000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000025000"}], ",", 
+     RowBox[{"b", "\[Rule]", "40001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000025600"}], ",", 
+     RowBox[{"b", "\[Rule]", "39063500000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000031250"}], ",", 
+     RowBox[{"b", "\[Rule]", "32001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000032000"}], ",", 
+     RowBox[{"b", "\[Rule]", "31251000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000032768"}], ",", 
+     RowBox[{"b", "\[Rule]", "30518578125000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000040000"}], ",", 
+     RowBox[{"b", "\[Rule]", "25001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000040960"}], ",", 
+     RowBox[{"b", "\[Rule]", "24415062500000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000050000"}], ",", 
+     RowBox[{"b", "\[Rule]", "20001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000051200"}], ",", 
+     RowBox[{"b", "\[Rule]", "19532250000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000062500"}], ",", 
+     RowBox[{"b", "\[Rule]", "16001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000064000"}], ",", 
+     RowBox[{"b", "\[Rule]", "15626000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000065536"}], ",", 
+     RowBox[{"b", "\[Rule]", "15259789062500"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000078125"}], ",", 
+     RowBox[{"b", "\[Rule]", "12801000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000080000"}], ",", 
+     RowBox[{"b", "\[Rule]", "12501000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000081920"}], ",", 
+     RowBox[{"b", "\[Rule]", "12208031250000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000100000"}], ",", 
+     RowBox[{"b", "\[Rule]", "10001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000102400"}], ",", 
+     RowBox[{"b", "\[Rule]", "9766625000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000125000"}], ",", 
+     RowBox[{"b", "\[Rule]", "8001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000128000"}], ",", 
+     RowBox[{"b", "\[Rule]", "7813500000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000131072"}], ",", 
+     RowBox[{"b", "\[Rule]", "7630394531250"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000156250"}], ",", 
+     RowBox[{"b", "\[Rule]", "6401000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000160000"}], ",", 
+     RowBox[{"b", "\[Rule]", "6251000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000163840"}], ",", 
+     RowBox[{"b", "\[Rule]", "6104515625000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000200000"}], ",", 
+     RowBox[{"b", "\[Rule]", "5001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000204800"}], ",", 
+     RowBox[{"b", "\[Rule]", "4883812500000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000250000"}], ",", 
+     RowBox[{"b", "\[Rule]", "4001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000256000"}], ",", 
+     RowBox[{"b", "\[Rule]", "3907250000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000262144"}], ",", 
+     RowBox[{"b", "\[Rule]", "3815697265625"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000312500"}], ",", 
+     RowBox[{"b", "\[Rule]", "3201000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000320000"}], ",", 
+     RowBox[{"b", "\[Rule]", "3126000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000327680"}], ",", 
+     RowBox[{"b", "\[Rule]", "3052757812500"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000390625"}], ",", 
+     RowBox[{"b", "\[Rule]", "2561000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000400000"}], ",", 
+     RowBox[{"b", "\[Rule]", "2501000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000409600"}], ",", 
+     RowBox[{"b", "\[Rule]", "2442406250000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000500000"}], ",", 
+     RowBox[{"b", "\[Rule]", "2001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000512000"}], ",", 
+     RowBox[{"b", "\[Rule]", "1954125000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000625000"}], ",", 
+     RowBox[{"b", "\[Rule]", "1601000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000640000"}], ",", 
+     RowBox[{"b", "\[Rule]", "1563500000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000655360"}], ",", 
+     RowBox[{"b", "\[Rule]", "1526878906250"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000781250"}], ",", 
+     RowBox[{"b", "\[Rule]", "1281000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000800000"}], ",", 
+     RowBox[{"b", "\[Rule]", "1251000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1000819200"}], ",", 
+     RowBox[{"b", "\[Rule]", "1221703125000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1001000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "1001000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1001024000"}], ",", 
+     RowBox[{"b", "\[Rule]", "977562500000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1001250000"}], ",", 
+     RowBox[{"b", "\[Rule]", "801000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1001280000"}], ",", 
+     RowBox[{"b", "\[Rule]", "782250000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1001310720"}], ",", 
+     RowBox[{"b", "\[Rule]", "763939453125"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1001562500"}], ",", 
+     RowBox[{"b", "\[Rule]", "641000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1001600000"}], ",", 
+     RowBox[{"b", "\[Rule]", "626000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1001638400"}], ",", 
+     RowBox[{"b", "\[Rule]", "611351562500"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1001953125"}], ",", 
+     RowBox[{"b", "\[Rule]", "513000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1002000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "501000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1002048000"}], ",", 
+     RowBox[{"b", "\[Rule]", "489281250000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1002500000"}], ",", 
+     RowBox[{"b", "\[Rule]", "401000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1002560000"}], ",", 
+     RowBox[{"b", "\[Rule]", "391625000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1003125000"}], ",", 
+     RowBox[{"b", "\[Rule]", "321000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1003200000"}], ",", 
+     RowBox[{"b", "\[Rule]", "313500000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1003276800"}], ",", 
+     RowBox[{"b", "\[Rule]", "306175781250"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1003906250"}], ",", 
+     RowBox[{"b", "\[Rule]", "257000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1004000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "251000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1004096000"}], ",", 
+     RowBox[{"b", "\[Rule]", "245140625000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1005000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "201000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1005120000"}], ",", 
+     RowBox[{"b", "\[Rule]", "196312500000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1006250000"}], ",", 
+     RowBox[{"b", "\[Rule]", "161000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1006400000"}], ",", 
+     RowBox[{"b", "\[Rule]", "157250000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1006553600"}], ",", 
+     RowBox[{"b", "\[Rule]", "153587890625"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1007812500"}], ",", 
+     RowBox[{"b", "\[Rule]", "129000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1008000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "126000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1008192000"}], ",", 
+     RowBox[{"b", "\[Rule]", "123070312500"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1009765625"}], ",", 
+     RowBox[{"b", "\[Rule]", "103400000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1010000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "101000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1010240000"}], ",", 
+     RowBox[{"b", "\[Rule]", "98656250000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1012500000"}], ",", 
+     RowBox[{"b", "\[Rule]", "81000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1012800000"}], ",", 
+     RowBox[{"b", "\[Rule]", "79125000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1015625000"}], ",", 
+     RowBox[{"b", "\[Rule]", "65000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1016000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "63500000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1016384000"}], ",", 
+     RowBox[{"b", "\[Rule]", "62035156250"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1019531250"}], ",", 
+     RowBox[{"b", "\[Rule]", "52200000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1020000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "51000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1020480000"}], ",", 
+     RowBox[{"b", "\[Rule]", "49828125000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1025000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "41000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1025600000"}], ",", 
+     RowBox[{"b", "\[Rule]", "40062500000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1031250000"}], ",", 
+     RowBox[{"b", "\[Rule]", "33000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1032000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "32250000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1032768000"}], ",", 
+     RowBox[{"b", "\[Rule]", "31517578125"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1039062500"}], ",", 
+     RowBox[{"b", "\[Rule]", "26600000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1040000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "26000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1040960000"}], ",", 
+     RowBox[{"b", "\[Rule]", "25414062500"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1048828125"}], ",", 
+     RowBox[{"b", "\[Rule]", "21480000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1050000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "21000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1051200000"}], ",", 
+     RowBox[{"b", "\[Rule]", "20531250000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1062500000"}], ",", 
+     RowBox[{"b", "\[Rule]", "17000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1064000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "16625000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1078125000"}], ",", 
+     RowBox[{"b", "\[Rule]", "13800000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1080000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "13500000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1081920000"}], ",", 
+     RowBox[{"b", "\[Rule]", "13207031250"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1097656250"}], ",", 
+     RowBox[{"b", "\[Rule]", "11240000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1100000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "11000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1102400000"}], ",", 
+     RowBox[{"b", "\[Rule]", "10765625000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1125000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "9000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1128000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "8812500000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1156250000"}], ",", 
+     RowBox[{"b", "\[Rule]", "7400000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1160000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "7250000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1163840000"}], ",", 
+     RowBox[{"b", "\[Rule]", "7103515625"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1195312500"}], ",", 
+     RowBox[{"b", "\[Rule]", "6120000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1200000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "6000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1204800000"}], ",", 
+     RowBox[{"b", "\[Rule]", "5882812500"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1244140625"}], ",", 
+     RowBox[{"b", "\[Rule]", "5096000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1250000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "5000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1256000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "4906250000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1312500000"}], ",", 
+     RowBox[{"b", "\[Rule]", "4200000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1320000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "4125000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1390625000"}], ",", 
+     RowBox[{"b", "\[Rule]", "3560000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1400000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "3500000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1409600000"}], ",", 
+     RowBox[{"b", "\[Rule]", "3441406250"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1488281250"}], ",", 
+     RowBox[{"b", "\[Rule]", "3048000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1500000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "3000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1512000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "2953125000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1625000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "2600000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1640000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "2562500000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1781250000"}], ",", 
+     RowBox[{"b", "\[Rule]", "2280000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1800000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "2250000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1819200000"}], ",", 
+     RowBox[{"b", "\[Rule]", "2220703125"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1976562500"}], ",", 
+     RowBox[{"b", "\[Rule]", "2024000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "2000000000"}], ",", 
+     RowBox[{"b", "\[Rule]", "2000000000"}], ",", 
+     RowBox[{"p", "\[Rule]", "1"}], ",", 
+     RowBox[{"n", "\[Rule]", "9"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6228082801078486`*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6228073866855154`*^9, 3.6228074232781744`*^9}, 
+   3.6228087044892826`*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6228087036772013`*^9, 3.6228087037262063`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"a_", ",", " ", "b_", ",", " ", "p_", ",", " ", "n_"}], "]"}], " ",
+   ":=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "/", "a"}], ")"}], " ", "+", " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "/", "b"}], ")"}]}], " ", "\[Equal]", " ", 
+   RowBox[{"(", 
+    RowBox[{"p", "/", 
+     RowBox[{"(", 
+      RowBox[{"10", "^", "n"}], ")"}]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.6228087505248857`*^9, 3.6228087834961824`*^9}}]
+},
+WindowSize->{913, 1142},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2439, 53, 252, "Input"],
+Cell[3022, 77, 553, 11, 21, "Message"],
+Cell[3578, 90, 41374, 1089, 2292, "Output"]
+}, Open  ]],
+Cell[44967, 1182, 124, 2, 31, InheritFromParent],
+Cell[45094, 1186, 96, 1, 31, InheritFromParent],
+Cell[45193, 1189, 503, 15, 64, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
