@@ -1,0 +1,85 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2318,         76]
+NotebookOptionsPosition[      1922,         59]
+NotebookOutlinePosition[      2267,         74]
+CellTagsIndexPosition[      2224,         71]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Project", " ", "Euler", " ", "Problem", " ", "474", " ", "Version", " ", 
+    "2"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"divs", "[", 
+    RowBox[{"n_", ",", " ", "d_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"(", "\[IndentingNewLine]", "\t\t\t\t", 
+    RowBox[{"ParallelMap", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Divisible", "[", 
+        RowBox[{"n", ",", " ", "#"}], "]"}], "&"}], ",", 
+      RowBox[{"Range", "[", 
+       RowBox[{"d", ",", " ", 
+        RowBox[{"n", "/", "2"}]}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+    "\t\t\t\t", ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.6228270375534105`*^9, 3.622827138107465*^9}, {
+  3.622827176936347*^9, 3.6228271784294963`*^9}, {3.6228273800596576`*^9, 
+  3.622827386332285*^9}}],
+
+Cell[BoxData[
+ RowBox[{"divs", "[", 
+  RowBox[{
+   RowBox[{"Factorial", "[", "12", "]"}], ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6228271416178155`*^9, 3.6228271462712812`*^9}, {
+  3.6228271967513285`*^9, 3.6228272142100744`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.622827418528504*^9, 3.622827418534505*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.622827162150869*^9, 3.622827191672821*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6228271897686305`*^9, 3.6228271897996335`*^9}}]
+},
+WindowSize->{913, 1142},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 827, 21, 92, "Input"],
+Cell[1388, 43, 241, 5, 31, "Input"],
+Cell[1632, 50, 92, 1, 31, InheritFromParent],
+Cell[1727, 53, 92, 1, 31, "Input"],
+Cell[1822, 56, 96, 1, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
