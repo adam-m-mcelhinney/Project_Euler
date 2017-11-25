@@ -30,6 +30,8 @@
 # What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally)
 # in the 20×20 grid?
 import itertools
+from matplotlib import pyplot
+import numpy as np
 
 '''Notes
 1. Each cell has a max of 8 possible moves
@@ -79,6 +81,7 @@ def returnCells(row, col, mults=4, maxRow=19, maxCol=19):
     leftValid = col+1 - mults >= 0
     moves = []
     # Calculate up moves
+    # EVERY set of moves should have the start row and column in it
     if upValid:
         upCol = range(row-mults+1, row+1)
         up = zip(upCol, [col] * mults)
@@ -101,7 +104,8 @@ def returnCells(row, col, mults=4, maxRow=19, maxCol=19):
 
     # Calculate diagonal moves to the up and right
     if upValid and rightValid:
-        upRight = zip(rightCol, upCol)
+        #upRight = zip(upCol, rightCol)
+        upRight = zip(upCol, sorted(list(rightCol), reverse=True))
         moves = appendMoves(moves, col=upRight)
 
     # Calculate moves down and to the right
@@ -111,7 +115,7 @@ def returnCells(row, col, mults=4, maxRow=19, maxCol=19):
 
     # Calculate moves down and to the left
     if downValid and leftValid:
-        downLeft = zip(downCol, leftCol)
+        downLeft = zip(downCol, sorted(list(leftCol), reverse=True))
         moves = appendMoves(moves, col=downLeft)
 
     # Calculate moves up and to the left
@@ -161,9 +165,10 @@ for move in allMoves:
     testVal = multOneMove(move, grid)
     if testVal > maxMult:
         maxMult = testVal
-        print(str(counter) + ' : ' + str(move) + ' = ' + str(maxMult))
+        print(str(counter) + ' : ' + str(move) + ' = ' + str(testVal))
     counter+=1
 
+assert(len(allMoves) == counter)
 
 # 0 : [(0, 0), (0, 1), (0, 2), (0, 3)] = 34144
 # 1 : [(0, 0), (1, 0), (2, 0), (3, 0)] = 1651104
@@ -220,9 +225,49 @@ def validateCount(allMoves):
 
 
 
-validateMinMax(allMoves)
+validateCount(allMoves)
 
 
+
+def plotMoves(row, col, grid):
+    gridVals = [[0 for i in range(len(grid))] for j in range(len(grid))]
+    gridVals = pd.DataFrame(gridVals)
+    gridVals.iloc[row, col] = 1
+    moves = returnCells(row, col)
+    for move in moves:
+        for i in move:
+            gridVals.iloc[i] = .5
+    img = pyplot.imshow(gridVals)
+    pyplot.show()
+
+
+plotMoves(0, 0, grid)
+plotMoves(10, 10, grid)
+plotMoves(19, 19, grid)
+plotMoves(19, 0, grid)
+plotMoves(2, 0, grid)
+plotMoves(17, 17, grid)
+
+
+
+########################################
+# Count moves
+moveCount = []
+for i in range(20):
+    mo = []
+    for j in range(20):
+        mo = mo + [len(returnCells(i, j))]
+    moveCount = moveCount + [mo]
+
+
+
+
+# tell imshow about color map so that only set colors are used
+img = pyplot.imshow(moveCount)
+
+# make a color bar
+pyplot.colorbar(img, ticks=range(3, 8+1, 1))
+pyplot.show()
 
 
 #### Tests
@@ -269,6 +314,7 @@ assert(multOneMove(move, grid)==1788696)
 
 # TODO: Validate move counts alegraically. Make sure matches len(allMoves)
 # Move Counts
-(0:mults-1, 0) = 3
-(mults: n-mults, 0) = 5
-(n - mults +1:n-1, 0) = 3
+# (0:mults-1, 0) = 3
+# (mults: n-mults, 0) = 5
+# (n - mults +1:n-1, 0) = 3
+#
