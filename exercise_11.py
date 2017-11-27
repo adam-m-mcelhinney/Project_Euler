@@ -163,6 +163,7 @@ counter = 0
 maxMult = 0
 for move in allMoves:
     testVal = multOneMove(move, grid)
+    plotMoves(0, 0, grid)
     if testVal > maxMult:
         maxMult = testVal
         print(str(counter) + ' : ' + str(move) + ' = ' + str(testVal))
@@ -247,6 +248,8 @@ plotMoves(19, 19, grid)
 plotMoves(19, 0, grid)
 plotMoves(2, 0, grid)
 plotMoves(17, 17, grid)
+plotMoves(15, 18, grid)
+
 
 
 
