@@ -1,0 +1,11 @@
+/Users/amcelhinney/repos/Project_Euler/euler/bin/Debug/netcoreapp2.1/euler.deps.json
+/Users/amcelhinney/repos/Project_Euler/euler/bin/Debug/netcoreapp2.1/euler.runtimeconfig.json
+/Users/amcelhinney/repos/Project_Euler/euler/bin/Debug/netcoreapp2.1/euler.runtimeconfig.dev.json
+/Users/amcelhinney/repos/Project_Euler/euler/bin/Debug/netcoreapp2.1/euler.dll
+/Users/amcelhinney/repos/Project_Euler/euler/bin/Debug/netcoreapp2.1/euler.pdb
+/Users/amcelhinney/repos/Project_Euler/euler/obj/Debug/netcoreapp2.1/euler.csprojAssemblyReference.cache
+/Users/amcelhinney/repos/Project_Euler/euler/obj/Debug/netcoreapp2.1/euler.csproj.CoreCompileInputs.cache
+/Users/amcelhinney/repos/Project_Euler/euler/obj/Debug/netcoreapp2.1/euler.AssemblyInfoInputs.cache
+/Users/amcelhinney/repos/Project_Euler/euler/obj/Debug/netcoreapp2.1/euler.AssemblyInfo.cs
+/Users/amcelhinney/repos/Project_Euler/euler/obj/Debug/netcoreapp2.1/euler.dll
+/Users/amcelhinney/repos/Project_Euler/euler/obj/Debug/netcoreapp2.1/euler.pdb

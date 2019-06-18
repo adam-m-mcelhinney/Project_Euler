@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{431AC4DB-C89B-410B-B1D0-4E7378354C27}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Divisors.cs">
+    <Files>
+      <File FileName="Program.cs" Line="20" Column="41" />
+      <File FileName="EmptyClass.cs" Line="14" Column="13" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="euler" expanded="True">
+            <Node name="euler" expanded="True">
+              <Node name="Divisors.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.euler PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
