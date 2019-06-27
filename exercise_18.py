@@ -94,7 +94,9 @@ def getValue(positionTuple, grid):
     return grid[positionTuple[0]][positionTuple[1]]
 
 def getPathSum(pathList, grid):
-    '''For a given path list, return the total sum'''
+    '''For a given path list, return the total sum
+    :rtype: object
+    '''
     totalVal = 0
     for positionTuple in pathList:
         totalVal += getValue(positionTuple, grid)
