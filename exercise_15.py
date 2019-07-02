@@ -297,14 +297,32 @@ def calcMaxMoves8(n=8):
         j += 1
     return i*2
 
-# TODO: I think I can just skip a bunhc of the allRoutes. We know that the first X will not have enough
+def calcMaxMoves9(n=8):
+    moves = [1,0]
+    allRoutes = product(moves, repeat = n*2)
+    i = 0 # Counter for the total number of acceptable routes
+    j = 0 # Total counter for the executed routes
+    mxRoutes = maxRoutes(n, moves)/2
+    for route in allRoutes:
+        if j > mxRoutes:
+            break
+        if sum(route) == n:
+            i +=1
+            #print(j, i)
+        j += 1
+    return i*2
+
+# TODO: I think I can just skip a bunch of the allRoutes. We know that the first X will not have enough
 # of one move in them.
+# TODO: Stop using the product function and write my own generator that yields
+# n/2 1's in every sequence
 
-#TODO: make the moves 0,1 and then sum them? May be faster than route.count()
 
+# TODO: Parallelize this
 
 for i in range(2, 9):
     mxMoves1 = calcMaxMoves(i)
+    # print(mxMoves1)
     mxMoves2 = calcMaxMoves2(i)
     mxMoves3 = calcMaxMoves3(i)
     mxMoves4 = calcMaxMoves4(i)
@@ -312,17 +330,21 @@ for i in range(2, 9):
     mxMoves6 = calcMaxMoves6(i)
     mxMoves7 = calcMaxMoves7(i)
     mxMoves8 = calcMaxMoves8(i)
-    assert(mxMoves1 == mxMoves2 == mxMoves3 == mxMoves4 == mxMoves5 == mxMoves6==mxMoves7 == mxMoves8)
+    mxMoves9 = calcMaxMoves9(i)
+    assert(mxMoves1 == mxMoves2 == mxMoves3 == mxMoves4 == mxMoves5 == mxMoves6==mxMoves7 == mxMoves8 == mxMoves9)
 
 
-t1= timeit.timeit(calcMaxMoves, number =1)
-t2= timeit.timeit(calcMaxMoves2, number = 1)
-t3= timeit.timeit(calcMaxMoves3, number = 1)
-t4= timeit.timeit(calcMaxMoves4, number = 1)
-t5 = timeit.timeit(calcMaxMoves5, number = 1)
-t6 = timeit.timeit(calcMaxMoves6, number = 1)
-t7 = timeit.timeit(calcMaxMoves7, number=1)
-t8 = timeit.timeit(calcMaxMoves8, number=1)
+
+
+t1= timeit.timeit(calcMaxMoves, number =5)
+t2= timeit.timeit(calcMaxMoves2, number = 5)
+t3= timeit.timeit(calcMaxMoves3, number = 5)
+t4= timeit.timeit(calcMaxMoves4, number = 5)
+t5 = timeit.timeit(calcMaxMoves5, number = 5)
+t6 = timeit.timeit(calcMaxMoves6, number = 5)
+t7 = timeit.timeit(calcMaxMoves7, number=5)
+t8 = timeit.timeit(calcMaxMoves8, number=5)
+t9 = timeit.timeit(calcMaxMoves9, number=5)
 print(t1)
 print(t2)
 print(t3)
@@ -331,8 +353,9 @@ print(t5)
 print(t6)
 print(t7)
 print(t8)
+print(t9)
 
-t = calcMaxMoves8(15)
+t = calcMaxMoves8(20)
 t
 
 
